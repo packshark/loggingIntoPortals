@@ -4,11 +4,18 @@ from navigation import make_sidebar
 make_sidebar()
 
 st.title("Welcome to the Packing Portal")
-
 st.write("Please log in to continue")
 
-username = st.text_input("Username")
-password = st.text_input("Password", type="password")
+with st.form("login_form"):
+    username = st.text_input("Username")
+    password = st.text_input("Password", type="password")
+    submit_button = st.form_submit_button("Log In")
+        
+if submit_button:
+    login(username, password)
+
+username = st.text_input("username")
+password = st.text_input("password", type="password")
 
 if st.button("Log in", type="primary"):
     if username == "phone" and password == "hellokitty":
