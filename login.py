@@ -10,10 +10,11 @@ st.title("Welcome to the Packing Portal")
 st.write("Please log in to continue")
 
 with st.form("login_form"):
-    username = st.text_input("Username")
-    password = st.text_input("Password", type="password")
+ username = st.text_input("Username")
+ password = st.text_input("Password", type="password")
+ submit_button = st.form_submit_button('Submit')
 
-    if st.button("Log in", type="primary"):
+    if submit_button:
         if username == "phone" and password == "hellokitty":
             st.session_state.logged_in = True
             st.success("Logged in successfully!")
