@@ -14,8 +14,8 @@ with st.form("login_form"):
  password = st.text_input("Password", type="password")
  submit_button = st.form_submit_button('Submit')
 
-    if submit_button:
-        if username == "phone" and password == "hellokitty":
+ if submit_button:
+  if username == "phone" and password == "hellokitty":
             st.session_state.logged_in = True
             st.success("Logged in successfully!")
             st.switch_page("cust.py")
@@ -35,3 +35,5 @@ with st.form("login_form"):
             st.experimental_rerun()  # Reload the page to reflect the login state
         else:
             st.error("Incorrect username or password")
+
+        
