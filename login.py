@@ -9,27 +9,20 @@ st.write("Please log in to continue")
 with st.form("login_form"):
     username = st.text_input("Username")
     password = st.text_input("Password", type="password")
-    submit_button = st.form_submit_button("Log In")
-        
-if submit_button:
-    login(username, password)
 
-username = st.text_input("username")
-password = st.text_input("password", type="password")
-
-if st.button("Log in", type="primary"):
-    if username == "phone" and password == "hellokitty":
-        st.session_state.logged_in = True
-        st.success("Logged in successfully!")
-        st.switch_page("cust.py")
-    elif username == "laptop" and password == "chamberofsecrets":
-        st.session_state.logged_in = True
-        st.success("Logged in successfully!")
-      # should show filtered views, so take them to different pages and tables
-        st.switch_page("operations.py")
-    elif username == "hehe" and password == "helloworld":
-        st.session_state.logged_in = True
-        st.success("Logged in successfully!")
-        st.switch_page("basicUser.py")
-    else:
-        st.error("Incorrect username or password")
+    if st.button("Log in", type="primary"):
+        if username == "phone" and password == "hellokitty":
+            st.session_state.logged_in = True
+            st.success("Logged in successfully!")
+            st.switch_page("cust.py")
+        elif username == "laptop" and password == "chamberofsecrets":
+            st.session_state.logged_in = True
+            st.success("Logged in successfully!")
+              # should show filtered views, so take them to different pages and tables
+            st.switch_page("operations.py")
+        elif username == "hehe" and password == "helloworld":
+            st.session_state.logged_in = True
+            st.success("Logged in successfully!")
+            st.switch_page("basicUser.py")
+        else:
+            st.error("Incorrect username or password")
