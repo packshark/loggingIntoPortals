@@ -12,20 +12,6 @@ make_sidebar()
 st.title("Welcome to the Packing Portal")
 st.write("Please log in to continue")
 
-import streamlit as st
-from navigation import make_sidebar
-
-# Ensure session state is initialized
-if "logged_in" not in st.session_state:
-    st.session_state.logged_in = False
-
-# Sidebar for navigation
-make_sidebar()
-
-# Main content
-st.title("Welcome to the Packing Portal")
-st.write("Please log in to continue")
-
 # Display login form
 with st.form("login_form"):
     username = st.text_input("Username")
